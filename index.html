@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauzi | Digital Business Card</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #050505;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .font-signature {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .bg-overlay {
+            background: linear-gradient(to bottom, transparent, rgba(88, 28, 135, 0.2), rgba(0, 0, 0, 0.9));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .organic-shape {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+
+        @keyframes waveform {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(2.5); }
+        }
+
+        .wave-bar {
+            animation: waveform 1.2s ease-in-out infinite;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+<body class="min-h-screen text-white flex flex-col items-center">
+
+    <!-- Fundo Estilizado -->
+    <div class="fixed inset-0 -z-10 bg-cover bg-center scale-110" 
+         style="background-image: url('https://images.unsplash.com/photo-1514525253344-f81bad3b757a?q=80&w=1975&auto=format&fit=crop'); filter: brightness(0.3) saturate(1.2);">
+    </div>
+    <div class="fixed inset-0 -z-10 bg-overlay pointer-events-none"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="w-full max-w-md px-6 py-12 flex flex-col items-center space-y-10">
+        
+        <!-- Seção de Perfil -->
+        <header class="flex flex-col items-center text-center animate-float">
+            <div class="relative group mb-4">
+                <div class="absolute -inset-2 bg-gradient-to-r from-orange-500 to-pink-600 rounded-full blur opacity-30"></div>
+                <div class="relative w-44 h-44 sm:w-52 sm:h-52 overflow-hidden organic-shape border-2 border-white/20 shadow-2xl">
+                    <img src="https://picsum.photos/seed/mauzi/400/400" alt="Mauzi" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="relative -mt-8">
+                <h1 class="font-signature text-7xl text-white drop-shadow-2xl">Mauzi</h1>
+                <div class="flex items-center justify-center gap-3 mt-1">
+                    <span class="h-[1px] w-8 bg-gradient-to-r from-transparent to-orange-500"></span>
+                    <p class="text-xs font-bold tracking-[0.3em] text-orange-400 uppercase text-glow">
+                        Compositor e Letrista
+                    </p>
+                    <span class="h-[1px] w-8 bg-gradient-to-l from-transparent to-orange-500"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Links de Contato -->
+        <section class="w-full flex flex-col gap-4">
+            <!-- Telefone -->
+            <a href="tel:+5561983543371" target="_blank" class="glass-card group flex items-center justify-between p-2 rounded-full hover:bg-white/20 transition-all active:scale-95">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-indigo-600 shadow-lg">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-bold text-sm tracking-tight">(61) 9 8354 - 3371</span>
+                </div>
+                <i data-lucide="chevron-right" class="mr-4 opacity-30 group-hover:translate-x-1 group-hover:opacity-100 transition-all"></i>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:mauzioficial@gmail.com" target="_blank" class="glass-card group flex items-center justify-between p-2 rounded-full hover:bg-white/20 transition-all active:scale-95">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-purple-600 shadow-lg">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-bold text-sm tracking-tight">mauzioficial@gmail.com</span>
+                </div>
+                <i data-lucide="chevron-right" class="mr-4 opacity-30 group-hover:translate-x-1 group-hover:opacity-100 transition-all"></i>
+            </a>
+
+            <!-- Portfólio -->
+            <a href="#" target="_blank" class="glass-card group flex items-center justify-between p-2 rounded-full hover:bg-white/20 transition-all active:scale-95">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-pink-600 shadow-lg">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-bold text-sm tracking-tight">Meu Portfólio Musical</span>
+                </div>
+                <i data-lucide="chevron-right" class="mr-4 opacity-30 group-hover:translate-x-1 group-hover:opacity-100 transition-all"></i>
+            </a>
+        </section>
+
+        <!-- Frase de Efeito -->
+        <section class="text-center pt-4 relative">
+            <span class="absolute -top-2 left-0 text-5xl text-pink-500/20 font-serif">"</span>
+            <p class="text-lg font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-orange-400 uppercase tracking-wider leading-tight">
+                Compor é transformar emoção em eternidade.
+            </p>
+            <span class="absolute -bottom-8 right-0 text-5xl text-pink-500/20 font-serif rotate-180">"</span>
+            
+            <!-- Equalizador Decorativo -->
+            <div class="flex items-center justify-center gap-1.5 mt-10 opacity-60">
+                <div class="wave-bar w-1 bg-white rounded-full h-4" style="animation-delay: 0.1s"></div>
+                <div class="wave-bar w-1 bg-white rounded-full h-8" style="animation-delay: 0.3s"></div>
+                <div class="wave-bar w-1 bg-white rounded-full h-5" style="animation-delay: 0.2s"></div>
+                <div class="wave-bar w-1 bg-white rounded-full h-10" style="animation-delay: 0.5s"></div>
+                <div class="wave-bar w-1 bg-white rounded-full h-6" style="animation-delay: 0.4s"></div>
+                <div class="wave-bar w-1 bg-white rounded-full h-3" style="animation-delay: 0.6s"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="mt-auto py-8 text-[10px] text-white/20 tracking-[0.3em] uppercase">
+        © 2024 Mauzi • Todos os direitos reservados
+    </footer>
+
+    <script>
+        // Inicializa os ícones do Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
